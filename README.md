@@ -30,17 +30,17 @@ PyG 2.1.0
 
 Please download the training and testing datasets and the pretrained model by following this link: [located here](https://1drv.ms/u/s!Ai8vR3oqUKxTd2cwdu5rFGp5F8M?e=fNKvsu) and downloading ```submission.zip```.
 
-Thereafter, unzip ```submission.zip``` and place the contents of the ```submission``` folder, i.e., the ```data``` and ```pretrained``` folders, directly within the root folder where the bash scripts are placed.
+Thereafter, unzip ```submission.zip``` and place the contents of the ```/submission``` folder, i.e., the ```/data``` and ```/pretrained``` folders, directly within the root folder where the bash scripts are placed.
 
 # How to run
 
 ## Run inference only (without training a new network)
-Please make sure ```launcher_test.sh``` has execute permissions and that the ```data``` and ```pretrained``` folders are correctly placed in the root directory. Thereafter, run the following command:
+Please make sure ```launcher_test.sh``` has execute permissions and that the ```/data``` and ```/pretrained``` folders are correctly placed in the root directory. Thereafter, run the following command:
 ```
 ./launcher_test.sh
 ```
 
-The evaluation results will be displayed in the terminal. You may further analyse the code within ```Evaluate.py```.
+The evaluation results will be displayed in the terminal. You may further analyse the code within ```Evaluate.py```. The filtered output will be found at ```./data/results```.
 
 ## Train the network
 Please make sure ```launcher_train.sh``` has execute permissions and that the ```data``` folder is correctly placed in the root directory. Thereafter, run the following command:
