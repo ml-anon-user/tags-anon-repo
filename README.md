@@ -14,7 +14,7 @@ pip install plyfile
 pip install pandas
 ```
 
-Please refer to the **How to run** section for either testing testing a pretrained network or training a new one.
+**Please refer to the "How to run" section for either testing a pretrained network or training a new one.**
 
 We have tested our networks with the following setup:
 ```
@@ -28,9 +28,9 @@ PyG 2.1.0
 
 # Download dataset + pre-trained models
 
-Please download the training and testing datasets and the pretrained model by following this link: ```https://1drv.ms/u/s!Ai8vR3oqUKxTd2cwdu5rFGp5F8M?e=fNKvsu``` and downloading ```submission.zip```.
+Please download the training and testing datasets and the pretrained model by following this link: [located here](https://1drv.ms/u/s!Ai8vR3oqUKxTd2cwdu5rFGp5F8M?e=fNKvsu) and downloading ```submission.zip```.
 
-Thereafter, unzip ```submission.zip``` and place the ```data``` and ```pretrained``` folders within the root folder.
+Thereafter, unzip ```submission.zip``` and place the contents of the ```submission``` folder, i.e., the ```data``` and ```pretrained``` folders, directly within the root folder where the bash scripts are placed.
 
 # How to run
 
