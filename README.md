@@ -1,8 +1,8 @@
 # Install software requirements
 Please run the following pip and conda install commands:
 ```
-conda create -n cvpr2023 python=3.7
-conda activate cvpr2023
+conda create -n newenv2023 python=3.7
+conda activate newenv2023
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 conda install -c bottler nvidiacub
