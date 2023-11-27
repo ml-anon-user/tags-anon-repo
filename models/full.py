@@ -32,6 +32,9 @@ class FullPFN(nn.Module):
             self.num_modules = len(self.velocity_nets)
         else:
             straight_ckpt = torch.load(args.straight_ckpt, map_location=args.device)
+
+            if args.straight_ckpt == './pretrained_straight/cvm_ckpt.pt':
+                straight_ckpt['args'].num_modules = 2
             self.num_modules = straight_ckpt['args'].num_modules
             self.velocity_nets = nn.ModuleList()
             for i in range(self.num_modules):

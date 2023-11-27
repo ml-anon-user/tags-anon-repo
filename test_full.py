@@ -29,10 +29,6 @@ def input_iter(input_dir):
             'scale': scale
         }
 
-# ckpt_0.000243_90000.pt - num_modules = 2
-# ckpt_0.000244_90000.pt - num_modules = 3
-# ckpt_0.000242_90000.pt - num_modules = 4
-
 # Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--ckpt', type=str, default='./pretrained_full/straightpcf_ckpt.pt')
@@ -43,15 +39,15 @@ parser.add_argument('--dataset_root', type=str, default='./data')
 parser.add_argument('--dataset', type=str, default='PUNet')
 parser.add_argument('--tag', type=str, default='')
 parser.add_argument('--resolution', type=str, default='10000_poisson')
-parser.add_argument('--noise', type=str, default='0.03')
+parser.add_argument('--noise', type=str, default='0.01')
 parser.add_argument('--device', type=str, default='cuda')
 parser.add_argument('--seed', type=int, default=2020)
 # Denoiser parameters
 parser.add_argument('--patch_size', type=int, default=1000)
 parser.add_argument('--seed_k', type=int, default=6)
 parser.add_argument('--seed_k_alpha', type=int, default=1)
-parser.add_argument('--tot_its', type=int, default=5)
-parser.add_argument('--niters', type=int, default=3)
+parser.add_argument('--tot_its', type=int, default=3)
+parser.add_argument('--niters', type=int, default=1)
 args = parser.parse_args()
 seed_all(args.seed)
 
@@ -80,6 +76,10 @@ for k, v in vars(args).items():
 ckpt = torch.load(args.ckpt, map_location=args.device)
 ckpt['args'].tot_its = args.tot_its
 ckpt['args'].patch_size = args.patch_size
+
+if args.ckpt == './pretrained_full/straightpcf_ckpt.pt':
+    ckpt['args'].straight_ckpt = './pretrained_straight/cvm_ckpt.pt'
+
 model = FullPFN(args=ckpt['args']).to(args.device)
 model.load_state_dict(ckpt['state_dict'])
 # summar = summary(model)

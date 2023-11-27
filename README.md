@@ -15,16 +15,20 @@ PyG 2.3.1
 
 Run the following pip and conda install commands to set up the environment:
 ```
-conda create -n newenv2024 python=3.9
-conda activate newenv2024
+conda create -n myenv python=3.9
+conda activate myenv
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 conda install -c bottler nvidiacub
 conda install pytorch3d -c pytorch3d
+pip install "git+https://github.com/facebookresearch/pytorch3d.git"
 conda install pyg -c pyg
 pip install point-cloud-utils==0.29.6
 pip install plyfile
 pip install pandas
+pip install tensorboard
+pip install torchsummary
+conda install pytorch-cluster -c pyg
 ```
 
 # Data
